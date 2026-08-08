@@ -1,348 +1,125 @@
 
-/* =========================================================
-   GOOGLE FONT
-========================================================= */
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
-
-/* =========================================================
-   BODY
-========================================================= */
-
-body {
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(255, 255, 255, 0.35),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #74ebd5,
-            #acb6e5
-        );
-
-    color: white;
-
-    overflow-x: hidden;
-}
-
-
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
-
-.container {
-    width: 100%;
-    max-width: 1150px;
-
-    padding: 25px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 22px;
-
-    position: relative;
-    z-index: 2;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    text-align: center;
-    color: white;
-}
-
-header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-
-    letter-spacing: -1px;
-
-    text-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.25);
-}
-
-header p {
-    margin-top: 5px;
-
-    font-size: 15px;
-
-    opacity: 0.85;
-}
-
-
-/* =========================================================
-   GAME + SETTINGS LAYOUT
-========================================================= */
+/* =========================
+   GAME AREA
+========================= */
 
 .game-layout {
     width: 100%;
 
     display: flex;
+    flex-direction: row-reverse;
 
     justify-content: center;
     align-items: flex-start;
 
-    gap: 22px;
+    gap: 25px;
 }
 
 
-/* =========================================================
-   GAME BOX
-========================================================= */
-
-.game-box {
-    position: relative;
-
-    width: 480px;
-    height: 700px;
-
-    flex-shrink: 0;
-
-    border-radius: 25px;
-
-    overflow: hidden;
-
-    background:
-        rgba(255, 255, 255, 0.12);
-
-    backdrop-filter: blur(18px);
-
-    -webkit-backdrop-filter: blur(18px);
-
-    border:
-        2px solid rgba(255, 255, 255, 0.25);
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.25);
-}
-
-
-/* =========================================================
-   CANVAS
-========================================================= */
-
-#gameCanvas {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    background:
-        linear-gradient(
-            #69d2ff,
-            #ffffff
-        );
-
-    touch-action: manipulation;
-}
-
-
-/* =========================================================
-   MENU / GAME OVER
-========================================================= */
-
-#menu,
-#gameOver {
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    background:
-        rgba(0, 0, 0, 0.42);
-
-    color: white;
-
-    backdrop-filter: blur(10px);
-
-    -webkit-backdrop-filter: blur(10px);
-
-    transition: 0.3s ease;
-
-    text-align: center;
-
-    padding: 25px;
-}
-
-#gameOver {
-    display: none;
-}
-
-#menu h2,
-#gameOver h2 {
-    font-size: 2.4rem;
-
-    margin-bottom: 10px;
-
-    text-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-button {
-    border: none;
-
-    padding: 13px 32px;
-
-    border-radius: 50px;
-
-    cursor: pointer;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            45deg,
-            #ff9800,
-            #ff5f6d
-        );
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-
-    box-shadow:
-        0 10px 20px rgba(0, 0, 0, 0.22);
-}
-
-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 14px 25px rgba(0, 0, 0, 0.28);
-}
-
-button:active {
-    transform: scale(0.96);
-}
-
-
-/* =========================================================
-   SETTINGS PANEL
-========================================================= */
+/* =========================
+   LEFT SETTINGS PANEL
+========================= */
 
 .settings {
     width: 250px;
 
     flex-shrink: 0;
 
+    padding: 24px;
+
     display: flex;
-
     flex-direction: column;
-
     gap: 16px;
 
-    padding: 22px;
+    border-radius: 24px;
 
-    border-radius: 20px;
-
-    background:
-        rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.20);
 
     backdrop-filter: blur(20px);
-
     -webkit-backdrop-filter: blur(20px);
 
-    border:
-        1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.35);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.16);
+        0 20px 45px rgba(0, 0, 0, 0.18);
 
     color: white;
+
+    text-align: center;
 }
+
+
+/* Settings title */
 
 .settings h2 {
     font-size: 20px;
+    font-weight: 600;
 
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
-.settings p {
-    font-size: 13px;
 
+/* Small description */
+
+.settings p {
+    font-size: 12px;
     opacity: 0.8;
 }
 
 
-/* =========================================================
-   SETTINGS LABELS
-========================================================= */
+/* =========================
+   BACKGROUND BUTTONS
+========================= */
 
-.settings label {
+.theme-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.theme-buttons button {
+    width: 100%;
+
+    padding: 11px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.15);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow: none;
+
     font-size: 13px;
+}
 
-    font-weight: 500;
+.theme-buttons button:hover {
+    background: rgba(255,255,255,0.30);
 
-    opacity: 0.9;
+    transform: translateX(4px);
 }
 
 
-/* =========================================================
-   FILE INPUT
-========================================================= */
+/* =========================
+   PHOTO UPLOAD
+========================= */
 
 .settings input[type="file"] {
     width: 100%;
 
-    margin-top: 5px;
-
     padding: 8px;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
-    background:
-        rgba(255, 255, 255, 0.12);
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.25);
 
     color: white;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.2);
-
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .settings input[type="file"]::file-selector-button {
@@ -350,7 +127,7 @@ button:active {
 
     padding: 7px 10px;
 
-    margin-right: 8px;
+    margin-right: 7px;
 
     border-radius: 8px;
 
@@ -358,237 +135,49 @@ button:active {
 
     color: #444;
 
-    cursor: pointer;
-
     font-weight: 600;
+
+    cursor: pointer;
 }
 
 
-/* =========================================================
-   THEME BUTTONS
-========================================================= */
-
-.theme-buttons {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 7px;
-}
-
-.theme-buttons button {
-    padding: 9px 5px;
-
-    font-size: 12px;
-
-    border-radius: 12px;
-
-    background:
-        rgba(255, 255, 255, 0.18);
-
-    box-shadow: none;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.2);
-}
-
-.theme-buttons button:hover {
-    background:
-        rgba(255, 255, 255, 0.3);
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================================================
+/* =========================
    DIVIDER
-========================================================= */
+========================= */
 
 .settings .divider {
     width: 100%;
 
     height: 1px;
 
-    background:
-        rgba(255, 255, 255, 0.2);
+    background: rgba(255,255,255,0.25);
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    color: white;
-
-    opacity: 0.75;
-
-    font-size: 13px;
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   FLOATING CLOUDS
-========================================================= */
-
-body::before,
-body::after {
-    content: "";
-
-    position: fixed;
-
-    width: 350px;
-    height: 120px;
-
-    background:
-        rgba(255, 255, 255, 0.16);
-
-    border-radius: 100px;
-
-    filter: blur(12px);
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    animation:
-        clouds 30s linear infinite;
-}
-
-body::before {
-    top: 80px;
-    left: -400px;
-}
-
-body::after {
-    top: 220px;
-    left: -500px;
-
-    animation-duration: 45s;
-}
-
-
-/* =========================================================
-   CLOUD ANIMATION
-========================================================= */
-
-@keyframes clouds {
-    from {
-        transform:
-            translateX(0);
-    }
-
-    to {
-        transform:
-            translateX(1800px);
-    }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 850px) {
-
-    body {
-        align-items: flex-start;
-
-        overflow-y: auto;
-    }
-
-    .container {
-        padding: 20px 15px;
-    }
 
     .game-layout {
         flex-direction: column;
 
         align-items: center;
+
+        gap: 18px;
     }
 
     .settings {
         width: 480px;
-
         max-width: 95vw;
     }
-}
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .container {
-        padding: 15px 10px;
-
-        gap: 15px;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header p {
-        font-size: 12px;
-    }
-
-    .game-box {
-        width: 95vw;
-
-        height: 75vh;
-
-        min-height: 500px;
-
-        max-height: 700px;
-
-        border-radius: 20px;
-    }
-
-    .settings {
-        width: 95vw;
-
-        padding: 18px;
-    }
-
-    .settings h2 {
-        font-size: 18px;
-    }
-
-    button {
-        font-size: 14px;
-
-        padding: 11px 25px;
+    .theme-buttons {
+        flex-direction: row;
     }
 
     .theme-buttons button {
-        font-size: 11px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 400px) {
-
-    .game-box {
-        height: 70vh;
-
-        min-height: 450px;
-    }
-
-    header h1 {
-        font-size: 1.7rem;
-    }
-
-    .settings {
-        padding: 15px;
+        flex: 1;
     }
 }
